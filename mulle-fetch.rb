@@ -1,9 +1,9 @@
 class MulleFetch < Formula
 desc "🏃🏿 Download and unpack source repositories or archives"
 homepage "https://github.com/mulle-sde/mulle-fetch"
-url "https://github.com/mulle-sde/mulle-fetch/archive/1.8.0.tar.gz"
-sha256 "b4b93897bdb56d539a0f4cdec3d1b58227dab2c1bc7c093e717cad3c1068614d"
-# version "1.8.0"
+url "https://github.com/mulle-sde/mulle-fetch/archive/1.8.1.tar.gz"
+sha256 "1842e81d2a63b9333f4b98fe675930847dcbc0855a29b560715ff6b3390b7075"
+# version "1.8.1"
 
 depends_on "mulle-kybernetik/software/mulle-bashfunctions"
 def install
