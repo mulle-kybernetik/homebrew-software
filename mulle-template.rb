@@ -2,7 +2,7 @@ class MulleTemplate < Formula
 desc "🕋 Generate files from templates"
 homepage "https://github.com/mulle-sde/mulle-template"
 url "https://github.com/mulle-sde/mulle-template/archive/0.0.2.tar.gz"
-sha256 "e15262fa4d97cfa161a3912c83d77d490408e24826e4b9dbf70d45d646af7587"
+sha256 "f3a614ed1ef8cbdecfd9d0d1c6edf03cbd08675e1e81c1504d416abe423a20a4"
 # version "0.0.2"
 
 depends_on "mulle-kybernetik/software/mulle-bashfunctions"
