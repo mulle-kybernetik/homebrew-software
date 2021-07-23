@@ -9,7 +9,7 @@ depends_on "mulle-build" => :build
 depends_on "mulle-bootstrap" => :build
 
 def install
-  system "xcodebuild", "-configuration", "Release", "DSTROOT=#{prefix}", "install"
+  system "xcodebuild", "-UseModernBuildSystem=NO", "-configuration", "Release", "DSTROOT=#{prefix}", "install"
 end
 end
 # FORMULA mulle-xcode-settings.rb
