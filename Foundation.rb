@@ -1,9 +1,9 @@
 class Foundation < Formula
 desc "💍 Convenient wrapper for the MulleFoundation"
 homepage "https://github.com/MulleFoundation/Foundation"
-url "https://github.com/MulleFoundation/Foundation/archive/0.18.0.tar.gz"
-sha256 "06cb2e2592e0992a1f62792f631fa0991b0405f5d1b5e815b864dfc6683ccc8a"
-# version "0.18.0"
+url "https://github.com/MulleFoundation/Foundation/archive/0.19.0.tar.gz"
+sha256 "e94f7f7bb164f3385b7714189156f77b6d6589988196b9c3d044560b9416de50"
+# version "0.19.0"
 
 depends_on "codeon-gmbh/software/mulle-clang"
 
