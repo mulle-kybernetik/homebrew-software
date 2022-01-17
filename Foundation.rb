@@ -5,7 +5,7 @@ url "https://github.com/MulleFoundation/Foundation/archive/0.20.0.tar.gz"
 sha256 "42080b41c2a2723cc7b1a996cdce50c2ba6117f5ae4b4bc794780f9925289fc0"
 # version "0.20.0"
 
-depends_on "mulle-objc/software/mulle-clang"
+depends_on "mulle-objc/software/mulle-clang-project"
 
 depends_on "mulle-kybernetik/software/mulle-sde" => :build
 depends_on "mulle-kybernetik/software/mulle-craft" => :build
