@@ -12,6 +12,7 @@ depends_on "mulle-kybernetik/software/mulle-sde" => :build
 depends_on "mulle-kybernetik/software/mulle-env" => :build
 depends_on "mulle-kybernetik/software/mulle-craft" => :build
 depends_on "mulle-kybernetik/software/mulle-dispense" => :build
+depends_on "mulle-kybernetik/software/mulle-domain" => :build
 depends_on "mulle-kybernetik/software/mulle-fetch" => :build
 depends_on "mulle-kybernetik/software/mulle-make" => :build
 depends_on "mulle-kybernetik/software/mulle-platform" => :build
