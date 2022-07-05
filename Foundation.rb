@@ -8,7 +8,6 @@ sha256 "3432ee6141104aaa2a75b5a045b81a7edf07bf5e4a5f9e50f097cf10c534a730"
 
 depends_on "mulle-objc/software/mulle-clang-project"
 
-depends_on "mulle-kybernetik/software/mulle-sde" => :build
 depends_on "mulle-kybernetik/software/mulle-env" => :build
 depends_on "mulle-kybernetik/software/mulle-craft" => :build
 depends_on "mulle-kybernetik/software/mulle-dispense" => :build
@@ -18,7 +17,11 @@ depends_on "mulle-kybernetik/software/mulle-match" => :build
 depends_on "mulle-kybernetik/software/mulle-make" => :build
 depends_on "mulle-kybernetik/software/mulle-monitor" => :build
 depends_on "mulle-kybernetik/software/mulle-platform" => :build
+depends_on "mulle-kybernetik/software/mulle-sde" => :build
+depends_on "mulle-kybernetik/software/mulle-semver" => :build
 depends_on "mulle-kybernetik/software/mulle-sourcetree" => :build
+depends_on "mulle-kybernetik/software/mulle-template" => :build
+depends_on "mulle-kybernetik/software/mulle-test" => :build
 depends_on "mulle-kybernetik/software/mulle-bashfunctions" => :build
 depends_on "cmake" => :build
 depends_on "ninja" => :build
