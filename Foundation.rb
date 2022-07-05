@@ -5,9 +5,11 @@ url "https://github.com/MulleFoundation/Foundation/archive/0.21.0.tar.gz"
 sha256 "3432ee6141104aaa2a75b5a045b81a7edf07bf5e4a5f9e50f097cf10c534a730"
 # version "0.21.0"
 
-depends_on "codeon-gmbh/software/mulle-clang"
+
+depends_on "mulle-objc/software/mulle-clang-project"
 
 depends_on "mulle-kybernetik/software/mulle-sde" => :build
+depends_on "mulle-kybernetik/software/mulle-env" => :build
 depends_on "mulle-kybernetik/software/mulle-craft" => :build
 depends_on "mulle-kybernetik/software/mulle-dispense" => :build
 depends_on "mulle-kybernetik/software/mulle-fetch" => :build
@@ -18,9 +20,9 @@ depends_on "mulle-kybernetik/software/mulle-bashfunctions" => :build
 depends_on "cmake" => :build
 depends_on "ninja" => :build
 
-  def install
-    system "mulle-sde", "clean", "cache"
-    system "mulle-sde","install","--standalone","--prefix","#{prefix}","https://github.com/MulleFoundation/Foundation/archive/latest.zip"
-  end
+def install
+   system "mulle-sde", "clean", "cache"
+   system "mulle-sde","install","--prefix","#{prefix}","https://github.com/MulleFoundation/Foundation/archive/latest.zip"
 end
-# FORMULA Foundation.rb
+
+end
