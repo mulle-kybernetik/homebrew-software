@@ -29,7 +29,7 @@ depends_on "ninja" => :build
 
 def install
    system "mulle-sde", "clean", "cache"
-   system "mulle-sde","install","--prefix","#{prefix}","https://github.com/MulleFoundation/Foundation/archive/latest.zip"
+   system "mulle-sde","-DHOMEBREW_LIBRARY","install","--prefix","#{prefix}","https://github.com/MulleFoundation/Foundation/archive/latest.zip"
 end
 
 end
