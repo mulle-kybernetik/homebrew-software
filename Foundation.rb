@@ -23,6 +23,7 @@ depends_on "mulle-kybernetik/software/mulle-sourcetree" => :build
 depends_on "mulle-kybernetik/software/mulle-template" => :build
 depends_on "mulle-kybernetik/software/mulle-test" => :build
 depends_on "mulle-kybernetik/software/mulle-bashfunctions" => :build
+depends_on "curl" => :build
 depends_on "cmake" => :build
 depends_on "ninja" => :build
 
