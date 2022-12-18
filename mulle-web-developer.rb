@@ -1,9 +1,9 @@
 class MulleWebDeveloper < Formula
 desc "🎒 MulleWeb developer kit for mulle-sde"
 homepage "https://github.com/MulleWeb/mulle-web-developer"
-url "https://github.com/MulleWeb/mulle-web-developer/archive/0.1.1.tar.gz"
-sha256 "017b9d37f9ba76586c7f7e0ef635add04e8e6f68a819536415ab90f426d447f1"
-# version "0.1.1"
+url "https://github.com/MulleWeb/mulle-web-developer/archive/0.1.4.tar.gz"
+sha256 "60bc28b08ed4aa0ec4a0e33b79b63e9fa08243079f739318cb2eb50a08589f7a"
+# version "0.1.4"
 
 depends_on "mulle-kybernetik/software/foundation-developer"
 def install
