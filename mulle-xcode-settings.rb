@@ -7,8 +7,9 @@ sha256 "2e576475112dbdf2b86907827bc5c908f815e092101ed56ecf167c03b5a9be8a"
 
 depends_on "mulle-kybernetik/software/mulle-foundation-developer" => :build
 depends_on "cmake" => :build
-depends_on "mulle-kybernetik/software/mulle-env" => :build
 depends_on "mulle-kybernetik/software/mulle-make" => :build
+depends_on "mulle-kybernetik/software/mulle-env" => :build
+depends_on "mulle-kybernetik/software/mulle-bashfunctions" => :build
 
 def install
 system "mulle-make", "-v", "install", "--prefix", "#{prefix}", "."
