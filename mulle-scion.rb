@@ -8,6 +8,7 @@ sha256 "68fb09b3a21bd153d6ec7b9a9bef095cf8042edbc8de16d14d710ed50fa79cd2"
 depends_on "mulle-kybernetik/software/mulle-sde" => :build
 depends_on "mulle-kybernetik/software/mulle-env" => :build
 depends_on "mulle-kybernetik/software/mulle-platform" => :build
+depends_on "mulle-kybernetik/software/mulle-fetch" => :build
 depends_on "mulle-kybernetik/software/mulle-domain" => :build
 depends_on "mulle-kybernetik/software/mulle-sourcetree" => :build
 depends_on "mulle-kybernetik/software/mulle-bashfunctions" => :build
