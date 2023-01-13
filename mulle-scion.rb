@@ -10,6 +10,7 @@ depends_on "mulle-kybernetik/software/mulle-env" => :build
 depends_on "mulle-kybernetik/software/mulle-platform" => :build
 depends_on "mulle-kybernetik/software/mulle-fetch" => :build
 depends_on "mulle-kybernetik/software/mulle-domain" => :build
+depends_on "mulle-kybernetik/software/mulle-semver" => :build
 depends_on "mulle-kybernetik/software/mulle-sourcetree" => :build
 depends_on "mulle-kybernetik/software/mulle-bashfunctions" => :build
 depends_on "cmake" => :build
