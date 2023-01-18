@@ -2,7 +2,7 @@ class MulleSde < Formula
 desc "💠 Cross-platform IDE for the command-line"
 homepage "https://github.com/mulle-sde/mulle-sde"
 url "https://github.com/mulle-sde/mulle-sde/archive/2.0.0.tar.gz"
-sha256 "9c0c3279c928aef832bd8522b8bdec2a68c70d641e3ec288b275228f27a73f3a"
+sha256 "2394ecf026e9676b13579a76331d7b9f51079db2047885ed264e683d2c7e174f"
 # version "2.0.0"
 
 depends_on "mulle-kybernetik/software/mulle-bashfunctions"
