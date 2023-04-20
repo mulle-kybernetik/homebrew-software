@@ -2,7 +2,7 @@ class MulleCraft < Formula
 desc "🚬 Build projects using mulle-make and mulle-sourcetree"
 homepage "https://github.com/mulle-sde/mulle-craft"
 url "https://github.com/mulle-sde/mulle-craft/archive/3.1.0.tar.gz"
-sha256 "46a4de3248f3f8d4b5226d5132d4efceda44e15637ad0483b2bbd65aff115752"
+sha256 "81c29d32dc55e943056d8631775d406c9b5f40504ff5f2c337f93ab6606feda8"
 # version "3.1.0"
 
 depends_on "mulle-kybernetik/software/mulle-sourcetree"
