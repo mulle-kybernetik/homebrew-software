@@ -1,9 +1,9 @@
 class MulleDomain < Formula
 desc "🏰 URL management and tag resolution for repositories"
 homepage "https://github.com/mulle-sde/mulle-domain"
-url "https://github.com/mulle-sde/mulle-domain/archive/1.1.0.tar.gz"
-sha256 "2ac8a595d89684af105fc1fa37fb01e70b269a669cf0d6c7c0700372b4de26d0"
-# version "1.1.0"
+url "https://github.com/mulle-sde/mulle-domain/archive/1.3.0.tar.gz"
+sha256 "b435d7b415ece422103c121744147f9435509953741dae6816822c13acfc653d"
+# version "1.3.0"
 
 depends_on "mulle-kybernetik/software/mulle-semver"
 def install
