@@ -1,9 +1,9 @@
 class MulleProject < Formula
 desc "🤷🏾‍♀️ Manage project versions and releases"
 homepage "https://github.com/mulle-nat/mulle-project"
-url "https://github.com/mulle-nat/mulle-project/archive/3.5.0.tar.gz"
-sha256 "026234d8c616b56b23d10c0f043ba99b8941939c3d870efc1d23eb5962a70819"
-# version "3.5.0"
+url "https://github.com/mulle-nat/mulle-project/archive/3.5.1.tar.gz"
+sha256 "ed6377f70e4b935e2bd29528c49b214b9b49ca01af9223bfd7c4171d2875758a"
+# version "3.5.1"
 
 depends_on "mulle-kybernetik/software/mulle-bashfunctions"
 depends_on "mulle-kybernetik/software/mulle-sde"
