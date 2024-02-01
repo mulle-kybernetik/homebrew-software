@@ -78,7 +78,7 @@ class MulleClangProject < Formula
       args << '-DLLVM_PARALLEL_LINK_JOBS=4'
       args << '-DCMAKE_BUILD_TYPE=Release'
       args << '-DCLANG_VENDOR=mulle' 
-      args << "-DLLVM_TARGETS_TO_BUILD='X86;ARM;AArch64'" \
+      args << "-DLLVM_TARGETS_TO_BUILD='X86;ARM;AArch64'"
       args << "-DCMAKE_SHARED_LINKER_FLAGS='-Wl,--reduce-memory-overheads'"
       args << "-DCMAKE_EXE_LINKER_FLAGS='-Wl,--reduce-memory-overheads'"
       args << '-DCMAKE_INSTALL_MESSAGE=LAZY'
