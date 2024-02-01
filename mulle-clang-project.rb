@@ -47,6 +47,9 @@ class MulleClangProject < Formula
     sha256 cellar: :any, sonoma: "aac00f815b7234abf66ac2bb868cc58630f7c2dce325ec351b07d5c5771f267a"
   end
 
+  # this is not good, should stati clink this
+  depends_on 'zstd'
+
 #
 # MEMO:
 #    Change llvm to proper version
@@ -75,8 +78,9 @@ class MulleClangProject < Formula
       args << '-DLLVM_PARALLEL_LINK_JOBS=4'
       args << '-DCMAKE_BUILD_TYPE=Release'
       args << '-DCLANG_VENDOR=mulle' 
-      args << "-DCMAKE_SHARED_LINKER_FLAGHS=''-Wl,--reduce-memory-overheads'"
-      args << "-DCMAKE_EXE_LINKER_FLAGHS='-Wl,--reduce-memory-overheads'"
+      args << "-DLLVM_TARGETS_TO_BUILD='X86;ARM;AArch64'" \
+      args << "-DCMAKE_SHARED_LINKER_FLAGS=''-Wl,--reduce-memory-overheads'"
+      args << "-DCMAKE_EXE_LINKER_FLAGS='-Wl,--reduce-memory-overheads'"
       args << '-DCMAKE_INSTALL_MESSAGE=LAZY'
       args << "-DCMAKE_INSTALL_PREFIX='#{prefix}/root'"
       args << '../llvm'
