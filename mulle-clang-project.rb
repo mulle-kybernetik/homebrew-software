@@ -2,7 +2,7 @@ class MulleClangProject < Formula
   desc "Objective-C compiler for the mulle-kybernetik runtime"
   homepage "https://github.com/mulle-cc/mulle-clang-project"
   license "BSD-3-Clause"
-  version "17.0.6.0"
+  version "17.0.6.2"
 #  revision 1
   head "https://github.com/mulle-cc/mulle-clang-project.git", branch: "mulle/17.0.6"
 
@@ -15,11 +15,11 @@ class MulleClangProject < Formula
 #    3. Run shasum over it `shasum -a 256 -b 17.0.6.0.tar.gz`
 #    4. Remove bottle urls
 #
-  url "https://github.com/mulle-cc/mulle-clang-project/archive/refs/tags/17.0.6.0.tar.gz"
-  sha256 "abd71ef24387050ca4f22a6f8ea8f27a646b7979a0cc7dc9e4a17f6045fa96d9"
+  url "https://github.com/mulle-cc/mulle-clang-project/archive/refs/tags/17.0.6.2.tar.gz"
+  sha256 "78e50da1e1254575df3e2c34b3ba2e46b2e3b82b2acaea10784b2d9695e7d520"
 
   def vendor
-    "mulle-clang 17.0.6.0 (runtime-load-version: 17)"
+    "mulle-clang 17.0.6.2 (runtime-load-version: 18)"
   end
 
 #
@@ -32,19 +32,19 @@ class MulleClangProject < Formula
 #    `brew tap-new mulle-kybernetik/software`
 #    `cp mulle-clang-project.rb /usr/local/Homebrew/Library/Taps/mulle-kybernetik/homebrew-software/Formula/`
 #    `brew bottle mulle-kybernetik/software/mulle-clang-project`
-#    `mv ./mulle-clang--17.0.6.0.sonoma.bottle.tar.gz  ./mulle-clang-project-17.0.6.0.sonoma.bottle.tar.gz`
+#    `mv ./mulle-clang--17.0.6.2.sonoma.bottle.tar.gz  ./mulle-clang-project-17.0.6.2.sonoma.bottle.tar.gz`
 #
 #     scp -i ~/.ssh/id_rsa_hetzner_pw \
-#            ./mulle-clang-17.0.6.0.sonoma.bottle.tar.gz \
+#            ./mulle-clang-17.0.6.2.sonoma.bottle.tar.gz \
 #            codeon@www262.your-server.de:public_html/_site/bottles/
 #
   bottle do
 #    "#{root_url}/#{name}-#{version}.#{tag}.bottle.#{revision}.tar.gz"
 #   root_url "https://www.mulle-kybernetik.com/bottles"
 
-    root_url "https://github.com/mulle-cc/mulle-clang-project/releases/download/17.0.6.0"
+    root_url "https://github.com/mulle-cc/mulle-clang-project/releases/download/17.0.6.2"
 
-    sha256 cellar: :any, sonoma: "aac00f815b7234abf66ac2bb868cc58630f7c2dce325ec351b07d5c5771f267a"
+    sha256 cellar: :any, sonoma: "a00b8b54c20a6131844b52fe2e577344b6f46a2b2eebe89cd82b16ad1f08937c"
   end
 
   # this is not good, should stati clink this
