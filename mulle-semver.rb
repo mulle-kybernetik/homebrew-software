@@ -1,9 +1,9 @@
 class MulleSemver < Formula
 desc "📍 semantic versioning tool"
 homepage "https://github.com/mulle-sde/mulle-semver"
-url "https://github.com/mulle-sde/mulle-semver/archive/1.0.4.tar.gz"
-sha256 "ea2a9afa3555f8f1f1e9cfe0eee96524474e46bd9d700d26c54c0fcb66a0a9e1"
-# version "1.0.4"
+url "https://github.com/mulle-sde/mulle-semver/archive/1.0.5.tar.gz"
+sha256 "cc41477407c06bee5955235c8ee10e2779d014e9d4f896e94f008252b467e7cf"
+# version "1.0.5"
 
 depends_on "mulle-kybernetik/software/mulle-bashfunctions"
 def install
