@@ -2,24 +2,25 @@ class MulleClangProject < Formula
   desc "Objective-C compiler for the mulle-kybernetik runtime"
   homepage "https://github.com/mulle-cc/mulle-clang-project"
   license "BSD-3-Clause"
-  version "17.0.6.2"
+  version "17.0.6.3"
 #  revision 1
   head "https://github.com/mulle-cc/mulle-clang-project.git", branch: "mulle/17.0.6"
 
 #
 # MEMO:
-#    0. Replace 17.0.6.0 with x.0.0.0 your version number (and check vendor)
+#    0. Replace 17.0.6.3 with x.0.0.0 your version number (and check vendor) `mulle-replace 17.0.6.4 x.0.0.0 mulle-clang-project.rb`
 #    1. Create a release on github
 #    2. Download the tar.gz file from github like so
-#       `curl -O -L "https://github.com/mulle-cc/mulle-clang-project/archive/17.0.6.0.tar.gz"`
-#    3. Run shasum over it `shasum -a 256 -b 17.0.6.0.tar.gz`
-#    4. Remove bottle urls
+#       `curl -O -L "https://github.com/mulle-cc/mulle-clang-project/archive/17.0.6.3.tar.gz"`
+#    3. Run shasum over it `shasum -a 256 -b 17.0.6.3.tar.gz`
+#    4. Change shasum `mulle-replace bd709f9fd1bbfc0b71b923ded5b9726a2d348ff912b7516ce3ef3bbe1ef817b7 newshasum mulle-clang-project.rb`
+#    5. Remove bottle urls
 #
-  url "https://github.com/mulle-cc/mulle-clang-project/archive/refs/tags/17.0.6.2.tar.gz"
-  sha256 "78e50da1e1254575df3e2c34b3ba2e46b2e3b82b2acaea10784b2d9695e7d520"
+  url "https://github.com/mulle-cc/mulle-clang-project/archive/refs/tags/17.0.6.3.tar.gz"
+  sha256 "bd709f9fd1bbfc0b71b923ded5b9726a2d348ff912b7516ce3ef3bbe1ef817b7"
 
   def vendor
-    "mulle-clang 17.0.6.2 (runtime-load-version: 18)"
+    "mulle-clang 17.0.6.3 (runtime-load-version: 18)"
   end
 
 #
@@ -32,19 +33,18 @@ class MulleClangProject < Formula
 #    `brew tap-new mulle-kybernetik/software`
 #    `cp mulle-clang-project.rb /usr/local/Homebrew/Library/Taps/mulle-kybernetik/homebrew-software/Formula/`
 #    `brew bottle mulle-kybernetik/software/mulle-clang-project`
-#    `mv ./mulle-clang--17.0.6.2.sonoma.bottle.tar.gz  ./mulle-clang-project-17.0.6.2.sonoma.bottle.tar.gz`
+#    `mv ./mulle-clang-project--17.0.6.3.sonoma.bottle.tar.gz  ./mulle-clang-project-17.0.6.3.sonoma.bottle.tar.gz`
 #
 #     scp -i ~/.ssh/id_rsa_hetzner_pw \
-#            ./mulle-clang-17.0.6.2.sonoma.bottle.tar.gz \
+#            ./mulle-clang-17.0.6.3.sonoma.bottle.tar.gz \
 #            codeon@www262.your-server.de:public_html/_site/bottles/
 #
   bottle do
 #    "#{root_url}/#{name}-#{version}.#{tag}.bottle.#{revision}.tar.gz"
 #   root_url "https://www.mulle-kybernetik.com/bottles"
+    root_url "https://github.com/mulle-cc/mulle-clang-project/releases/download/17.0.6.3"
 
-    root_url "https://github.com/mulle-cc/mulle-clang-project/releases/download/17.0.6.2"
-
-    sha256 cellar: :any, sonoma: "a00b8b54c20a6131844b52fe2e577344b6f46a2b2eebe89cd82b16ad1f08937c"
+    sha256 cellar: :any, sonoma: "e78e7a3853e4cf55cab6e66eb90ff63e1d112808c2594331036508e0e955702c"
   end
 
   # this is not good, should stati clink this
