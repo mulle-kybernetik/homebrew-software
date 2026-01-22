@@ -39,8 +39,9 @@ class MulleClangProject < Formula
 #            codeon@www262.your-server.de:public_html/_site/bottles/
 #
   bottle do
-  root_url "https://github.com/mulle-cc/mulle-clang-project/releases/download/21.1.8.1"
-  sha256 cellar: :any, sequoia: "85b3b7ecd587506db189298e1ca8ae95192f77f8da0d64138834e26f2dbc70f1"
+    root_url "https://github.com/mulle-cc/mulle-clang-project/releases/download/21.1.8.1/"
+    sha256 cellar: :any, sequoia: "85b3b7ecd587506db189298e1ca8ae95192f77f8da0d64138834e26f2dbc70f1"
+    sha256 cellar: :any, arm64_sequoia: "542fde817714756c5b62cb2773632c082c7fa02fd3eefb6ef68b81ed6e7653e0"
   end
 
 #
