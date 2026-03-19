@@ -1,9 +1,9 @@
 class MulleTodo < Formula
 desc "📋 A Todo list manager for shell environment"
 homepage "https://github.com/mulle-sde/mulle-todo"
-url "https://github.com/mulle-sde/mulle-todo/archive/0.2.1.tar.gz"
-sha256 "18eee513456fa6b57d9d07b2d977e27f62797b10289cd777bcecbd796c5c2429"
-# version "0.2.1"
+url "https://github.com/mulle-sde/mulle-todo/archive/0.2.2.tar.gz"
+sha256 "e21863479ffa42680936500eb3ebc23051ced24ab7f5171cc6413b417035c426"
+# version "0.2.2"
 
 depends_on "mulle-kybernetik/software/mulle-bashfunctions"
 def install
