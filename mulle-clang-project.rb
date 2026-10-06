@@ -2,29 +2,45 @@ class MulleClangProject < Formula
   desc "Objective-C compiler for the mulle-kybernetik runtime"
   homepage "https://github.com/mulle-cc/mulle-clang-project"
   license "BSD-3-Clause"
-  version "21.1.8.1"
+  version "22.1.8.7"
 #  revision 1
   head "https://github.com/mulle-cc/mulle-clang-project.git", branch: "mulle/17.0.6"
 
 #
-# MEMO:
-#    0. Replace 21.1.8.1 with x.0.0.0 your version number (and check vendor)
+# PREFERRED WORKFLOW:
+#    The whole version-bump + bottle build + publish process is now scripted as a
+#    replayable mulle-release-commander (MRC) bundle:
+#
+#        mulle-clang-project-macos.mrc   (sibling of the homebrew-software repo)
+#
+#    Point an AI agent at it (see its AGENTS.md / AI-EXECUTION.md) and it runs the
+#    ordered tasks: verify tap symlink, set version+source sha256, --build-bottle,
+#    brew bottle + rename, insert the bottle sha256 block, upload to the github
+#    release, and verify install from the bottle. Bottles are hosted on github
+#    releases (matching the `bottle do root_url` below).
+#
+#    The MEMO steps below are kept as the MANUAL FALLBACK / reference for what the
+#    bundle automates. Prefer the MRC bundle.
+#
+# MEMO (manual fallback):
+#    0. Replace 22.1.8.7 with x.0.0.0 your version number (and check vendor)
 #    1. Create a release on github
 #    2. Download the tar.gz file from github like so
-#       `curl -O -L "https://github.com/mulle-cc/mulle-clang-project/archive/21.1.8.1.tar.gz"`
-#    3. Run shasum over it `shasum -a 256 -b 21.1.8.1.tar.gz`
+#       `curl -O -L "https://github.com/mulle-cc/mulle-clang-project/archive/22.1.8.7.tar.gz"`
+#    3. Run shasum over it `shasum -a 256 -b 22.1.8.7.tar.gz`
 #    4. Remove bottle urls
 #
-  url "https://github.com/mulle-cc/mulle-clang-project/archive/refs/tags/21.1.8.1.tar.gz"
-  sha256 "ae7ca7435450b7a81594cafae62a5c23f3a76ce02467146277d23313f4ce950b"
+  url "https://github.com/mulle-cc/mulle-clang-project/archive/refs/tags/22.1.8.7.tar.gz"
+  sha256 "a6c3ea6ee6ab44f4b5ff0e0cd7d6f3ac3245f2da1b56cc72660a663edad6b05f"
 
   def vendor
-    "mulle-clang 21.1.8.1 (runtime-load-version: 18)"
+    "mulle-clang 22.1.8.7 (runtime-load-version: 21)"
   end
 
 #
-# MEMO:
+# MEMO (manual fallback):
 #    For each OS X version, create bottles with:
+#    (This is the manual equivalent of what mulle-clang-project-macos.mrc automates.)
 #
 #    `brew uninstall mulle-kybernetik/software/mulle-clang-project`
 #    `brew install --formula --build-bottle mulle-clang-project.rb`
@@ -32,16 +48,19 @@ class MulleClangProject < Formula
 #    `brew tap-new mulle-kybernetik/software`
 #    `cp mulle-clang-project.rb /usr/local/Homebrew/Library/Taps/mulle-kybernetik/homebrew-software/Formula/`
 #    `brew bottle mulle-kybernetik/software/mulle-clang-project`
-#    `mv ./mulle-clang--21.1.8.1.sequoia.bottle.tar.gz  ./mulle-clang-project-21.1.8.1.sequoia.bottle.tar.gz`
+#    `mv ./mulle-clang--22.1.8.7.sequoia.bottle.tar.gz  ./mulle-clang-project-22.1.8.7.sequoia.bottle.tar.gz`
 #
 #     scp -i ~/.ssh/id_rsa_hetzner_pw \
-#            ./mulle-clang-21.1.8.1.sequoia.bottle.tar.gz \
+#            ./mulle-clang-22.1.8.7.sequoia.bottle.tar.gz \
 #            codeon@www262.your-server.de:public_html/_site/bottles/
 #
   bottle do
-    root_url "https://github.com/mulle-cc/mulle-clang-project/releases/download/21.1.8.1/"
-    sha256 cellar: :any, sequoia: "85b3b7ecd587506db189298e1ca8ae95192f77f8da0d64138834e26f2dbc70f1"
-    sha256 cellar: :any, arm64_sequoia: "542fde817714756c5b62cb2773632c082c7fa02fd3eefb6ef68b81ed6e7653e0"
+    root_url "https://github.com/mulle-cc/mulle-clang-project/releases/download/22.1.8.7/"
+    sha256 cellar: :any, arm64_sonoma:      "a3623d65bd114181b04167fb44da3f2a2b6b2136a9c89b5d80a1d03fd027f911"
+    sha256 cellar: :any, arm64_sequoia:     "0656c3a63226cc70d388d6c38a1392e5aad76011e7506aaf04df4a6a47437ee4"
+    sha256 cellar: :any, arm64_tahoe:       "ae9f1048112b3f81a87e8782ac146f56857ed32001b3ac2700b81d361928d630"
+    sha256 cellar: :any, arm64_golden_gate: "98ae9ce07fb2985bf30cc5df4f85ac22cf4c03fc30b2a896f291cbcf6697598d"
+    sha256 cellar: :any, sequoia:           "c421aee60a17ce1a83f109161c265d1ad99d6c04185a132b80ceb5be26b425ed"
   end
 
 #
@@ -72,8 +91,15 @@ class MulleClangProject < Formula
       args << '-DLLVM_PARALLEL_LINK_JOBS=4'
       args << '-DCMAKE_BUILD_TYPE=Release'
       args << '-DCLANG_VENDOR=mulle' 
-      args << "-DCMAKE_SHARED_LINKER_FLAGHS=''-Wl,--reduce-memory-overheads'"
-      args << "-DCMAKE_EXE_LINKER_FLAGHS='-Wl,--reduce-memory-overheads'"
+      #
+      # `--reduce-memory-overheads` is a GNU ld (binutils) option with no ld64
+      # equivalent; macOS ld rejects it ("ld: unknown options"), which breaks the
+      # CMake compiler check. Only pass it on Linux where GNU ld is used.
+      #
+      unless OS.mac?
+        args << "-DCMAKE_SHARED_LINKER_FLAGS='-Wl,--reduce-memory-overheads'"
+        args << "-DCMAKE_EXE_LINKER_FLAGS='-Wl,--reduce-memory-overheads'"
+      end
       args << '-DCMAKE_INSTALL_MESSAGE=LAZY'
       args << "-DCMAKE_INSTALL_PREFIX='#{prefix}/root'"
       args << '../llvm'
