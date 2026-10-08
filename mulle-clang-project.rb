@@ -2,7 +2,7 @@ class MulleClangProject < Formula
   desc "Objective-C compiler for the mulle-kybernetik runtime"
   homepage "https://github.com/mulle-cc/mulle-clang-project"
   license "BSD-3-Clause"
-  version "22.1.8.7"
+  version "22.1.8.8"
 #  revision 1
   head "https://github.com/mulle-cc/mulle-clang-project.git", branch: "mulle/17.0.6"
 
@@ -30,11 +30,11 @@ class MulleClangProject < Formula
 #    3. Run shasum over it `shasum -a 256 -b 22.1.8.7.tar.gz`
 #    4. Remove bottle urls
 #
-  url "https://github.com/mulle-cc/mulle-clang-project/archive/refs/tags/22.1.8.7.tar.gz"
-  sha256 "a6c3ea6ee6ab44f4b5ff0e0cd7d6f3ac3245f2da1b56cc72660a663edad6b05f"
+  url "https://github.com/mulle-cc/mulle-clang-project/archive/refs/tags/22.1.8.8.tar.gz"
+  sha256 "4b441b5b84b5122ffd8f2c260e8b9ddead56d8e4a7de1f850adc8f84f98f2385"
 
   def vendor
-    "mulle-clang 22.1.8.7 (runtime-load-version: 21)"
+    "mulle-clang 22.1.8.8 (runtime-load-version: 21)"
   end
 
 #
@@ -55,12 +55,11 @@ class MulleClangProject < Formula
 #            codeon@www262.your-server.de:public_html/_site/bottles/
 #
   bottle do
-    root_url "https://github.com/mulle-cc/mulle-clang-project/releases/download/22.1.8.7/"
-    sha256 cellar: :any, arm64_sonoma:      "a3623d65bd114181b04167fb44da3f2a2b6b2136a9c89b5d80a1d03fd027f911"
-    sha256 cellar: :any, arm64_sequoia:     "0656c3a63226cc70d388d6c38a1392e5aad76011e7506aaf04df4a6a47437ee4"
-    sha256 cellar: :any, arm64_tahoe:       "ae9f1048112b3f81a87e8782ac146f56857ed32001b3ac2700b81d361928d630"
-    sha256 cellar: :any, arm64_golden_gate: "98ae9ce07fb2985bf30cc5df4f85ac22cf4c03fc30b2a896f291cbcf6697598d"
-    sha256 cellar: :any, sequoia:           "c421aee60a17ce1a83f109161c265d1ad99d6c04185a132b80ceb5be26b425ed"
+    root_url "https://github.com/mulle-cc/mulle-clang-project/releases/download/22.1.8.8/"
+    sha256 cellar: :any, arm64_golden_gate: "c61a1a957c626ef06704986c20c5a4f710c1712a1c3a1ebde2523b69b9b25f13"
+    sha256 cellar: :any, arm64_sequoia: "94ab761d08982c63a3490cfee6b7ed7e4f3fdb6c4c3d7a3620fd7f06b6f09997"
+    sha256 cellar: :any, arm64_sonoma: "ef96d5da4065f7c4a34f115bed43dc79ff9bb12440eb4bfaa17080c29785d377"
+    sha256 cellar: :any, arm64_tahoe: "74d8eb5c1f56cd0fd5fb6f0c289964f8b0b6d7f5574a6fcb076c9e8a0f14b499"
   end
 
 #
