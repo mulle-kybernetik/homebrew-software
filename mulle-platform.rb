@@ -1,9 +1,9 @@
 class MullePlatform < Formula
 desc "👠 Query platform specifica and search for libraries"
 homepage "https://github.com/mulle-sde/mulle-platform"
-url "https://github.com/mulle-sde/mulle-platform/archive/1.4.0.tar.gz"
-sha256 "8eeee1cf5384417408b516c641624bf6d9342d46802f3888f84b590abe6699d4"
-# version "1.4.0"
+url "https://github.com/mulle-sde/mulle-platform/archive/1.5.0.tar.gz"
+sha256 "d06917dd62939a83f8eac352b71a04c7a88fb8c8b52ad5284fcefba458f123b3"
+# version "1.5.0"
 
 depends_on "mulle-kybernetik/software/mulle-bashfunctions"
 def install
