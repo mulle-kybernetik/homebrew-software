@@ -1,9 +1,9 @@
 class MulleBashfunctions < Formula
 desc "🥊 A versioned collection of bash functions"
 homepage "https://github.com/mulle-nat/mulle-bashfunctions"
-url "https://github.com/mulle-nat/mulle-bashfunctions/archive/6.9.0.tar.gz"
-sha256 "137ebfb843829ec66bd5302827d5e0f21616c88534854d9aca1d84a8d3a5a974"
-# version "6.9.0"
+url "https://github.com/mulle-nat/mulle-bashfunctions/archive/6.9.1.tar.gz"
+sha256 "1c0c3ba79f966a27aebc17f282d0116f6dab5b50e81d56f04336396d68e9ecda"
+# version "6.9.1"
 def install
   system "./bin/installer", "#{prefix}"
 end
